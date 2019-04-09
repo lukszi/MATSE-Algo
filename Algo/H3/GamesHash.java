@@ -36,13 +36,15 @@ public class GamesHash
      */
     public void add(String game){
         int h0 = hashIndex(game);
-        if(hashTable[Math.abs(h0%31)]!=null && hashTable[Math.abs(h0%31)]!=null) {
-            h0 += hashIncrement(game);
-            if(hashTable[Math.abs(h0%31)]!=null){
-                throw new RuntimeException("Value can't be placed");
+        int hashincrement = hashIncrement(game);
+        for (int i = 0; i < 31; ++i){   //hashcode will be equal to h0 after 30 increments
+            int hashi = Math.abs((h0 + i * hashincrement)%31);
+            if (hashTable[hashi] == null){
+                hashTable[hashi] = game;
+                return;
             }
         }
-        hashTable[Math.abs(h0%31)] = game;
+        throw new RuntimeException("Value can't be placed");
     }
 
     /**
@@ -52,12 +54,12 @@ public class GamesHash
      */
     public boolean contains(String game){
         int h0 = hashIndex(game);
-        if(hashTable[Math.abs(h0%31)]!=null) {
-            if(hashTable[Math.abs(h0%31)].equals(game))
+        int hashincrement = hashIncrement(game);
+        for (int i = 0; i < 31; ++i){   //hashcode will be equal to h0 after 30 increments
+            int hashi = Math.abs((h0 + i * hashincrement)%31);
+            String currentGame = hashTable[hashi];
+            if (currentGame != null && currentGame.equals(game)){
                 return true;
-            h0 += hashIncrement(game);
-            if(hashTable[Math.abs(h0%31)]!=null){
-                return hashTable[Math.abs(h0 % 31)].equals(game);
             }
         }
         return false;
@@ -66,7 +68,7 @@ public class GamesHash
     public static void main(String[] args) throws FileNotFoundException
     {
         GamesHash hash = new GamesHash();
-        Scanner sc = new Scanner(new File("C:\\Users\\Lukas\\Documents\\Uni\\MATSE\\Algo\\H3\\games20.txt"));
+        Scanner sc = new Scanner(new File("C:\\Users\\CRA\\Documents\\Uni\\MATSE\\Algo\\H3\\games20.txt"));
         while(sc.hasNextLine()){
             String line = sc.nextLine();
             String[] splitLine = line.split("\t");
