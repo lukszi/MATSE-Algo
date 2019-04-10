@@ -58,7 +58,10 @@ public class GamesHash
         for (int i = 0; i < 31; ++i){   //hashcode will be equal to h0 after 30 increments
             int hashi = Math.abs((h0 + i * hashincrement)%31);
             String currentGame = hashTable[hashi];
-            if (currentGame != null && currentGame.equals(game)){
+            if(currentGame==null){
+                return false;
+            }
+            else if (currentGame.equals(game)){
                 return true;
             }
         }
