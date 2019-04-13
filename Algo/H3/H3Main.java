@@ -9,10 +9,12 @@ import java.util.Scanner;
  */
 public class H3Main
 {
+    private static final String filePath = "C:\\\\Users\\\\CRA\\\\Documents\\\\Uni\\\\MATSE\\\\Algo\\\\H3\\\\games20.txt";
+    
     public static void main(String[] args) throws FileNotFoundException
     {
         GamesHash hash = new GamesHash();
-        Scanner sc = new Scanner(new File("C:\\Users\\CRA\\Documents\\Uni\\MATSE\\Algo\\H3\\games20.txt"));
+        Scanner sc = new Scanner(new File(filePath));
         while(sc.hasNextLine()){
             String line = sc.nextLine();
             String[] splitLine = line.split("\t");
