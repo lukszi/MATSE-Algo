@@ -40,7 +40,7 @@ public class MyHashSet<K>
      * @return true if the element already existed, false otherwise
      */
     public boolean add(K elem){
-        var list = hashTable[elem.hashCode()%hashTable.length];
+        ArrayList<K> list = hashTable[elem.hashCode() % hashTable.length];
         if(list.contains(elem))
             return true;
         else{
@@ -100,7 +100,7 @@ public class MyHashSet<K>
     }
 
     private Iterator<K> iterator(){
-        return new Iterator<>()
+        return new Iterator<K>()
         {
             int tablePosition = 0;
             Iterator<K> currentIterator = hashTable[tablePosition].iterator();
