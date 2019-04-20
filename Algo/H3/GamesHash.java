@@ -1,7 +1,3 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 /**
  * set of game strings utilizing hashing and double hashing to avoid collisions
  * @author Lukas Szimtenings
@@ -58,25 +54,13 @@ public class GamesHash
         for (int i = 0; i < 31; ++i){   //hashcode will be equal to h0 after 30 increments
             int hashi = Math.abs((h0 + i * hashincrement)%31);
             String currentGame = hashTable[hashi];
-            if (currentGame != null && currentGame.equals(game)){
+            if(currentGame==null){
+                return false;
+            }
+            else if (currentGame.equals(game)){
                 return true;
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) throws FileNotFoundException
-    {
-        GamesHash hash = new GamesHash();
-        Scanner sc = new Scanner(new File("C:\\Users\\CRA\\Documents\\Uni\\MATSE\\Algo\\H3\\games20.txt"));
-        while(sc.hasNextLine()){
-            String line = sc.nextLine();
-            String[] splitLine = line.split("\t");
-            hash.add(splitLine[1]);
-        }
-        //sc.forEachRemaining(s -> hash.add(s.split("\t")[1]));
-        System.out.println(hash.contains("Nioh"));
-        System.out.println(hash.contains("Cuphead"));
-        System.out.println(hash.contains("WOW"));
     }
 }

@@ -24,37 +24,7 @@ hs_err_pid*
 .idea/
 MATSE.iml
 /uebung/
-Programmierung mit Java/H1/H1Main.java
-Programmierung mit Java/H1/Hausaufgaben_01.pdf
-Programmierung mit Java/H1/Messreihe.java
-Programmierung mit Java/H10/
-Programmierung mit Java/H11/
-Programmierung mit Java/H12/
-Programmierung mit Java/H13/
-Programmierung mit Java/H2/
-Programmierung mit Java/H3/
-Programmierung mit Java/H4/
-Programmierung mit Java/H5/H5Main.java
-Programmierung mit Java/H5/MyArrayList.java
-Programmierung mit Java/java/H6/
-Programmierung mit Java/H7/
-Programmierung mit Java/H8/Blatt.java
-Programmierung mit Java/H8/BlattVergleich.java
-Programmierung mit Java/H8/BlattVergleich_bak.java
-Programmierung mit Java/H8/H8Main.java
-Programmierung mit Java/H9/
-Programmierung mit Java/JavaFXTest/
-Programmierung mit Java/java/Messwerte.txt
-Programmierung mit Java/PA10/
-Programmierung mit Java/PA2/
-Programmierung mit Java/PA4/
-Programmierung mit Java/PA5/
-Programmierung mit Java/PA6/
-Programmierung mit Java/PA7/
-Programmierung mit Java/Probeklausur/
-Programmierung mit Java/java/bundesliga1314.txt
-Programmierung mit Java/java/emailadressbuch.txt
-Programmierung mit Java/java/message.txt
+Programmierung mit Java/*
 README.md
 out/production/MATSE/Hausaufgaben_01.pdf
 out/production/MATSE/Hausaufgaben_02.pdf
@@ -62,3 +32,4 @@ out/production/MATSE/META-INF/
 out/production/MATSE/first gui.fxml
 out/production/MATSE/gold.txt
 out/test/
+out/production/MATSE/games20.txt
