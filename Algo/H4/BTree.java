@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class BTree{
     /**
-     * innere Klasse zum darstellen einer Node. Die Attribute sind public, um Code zu vereinfacen und von aussen nicht auf die Klasse
-     * zugegriffen werden kann.
+     * innere Klasse zum darstellen eines Nodes. Die Attribute sind public, um Code zu vereinfachen und da von aussen
+     * nicht auf die Klasse zugegriffen werden kann.
      */
     private static class BTreeNode{
         ArrayList<Integer> values = new ArrayList<>();
@@ -103,7 +103,7 @@ public class BTree{
             if (x < value){
                 node.values.add(index, x);
                 return index;
-            } else if (index == node.values.size()-1 && x > value){
+            } else if (index == node.values.size()-1){
                 node.values.add(x);
                 return index+1;
             }
