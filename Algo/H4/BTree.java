@@ -80,7 +80,7 @@ public class BTree{
             int value = currentNode.values.get(index);
             if (x < value){
                 return currentNode.children.get(index);
-            } else if (index == currentNode.values.size()-1 && x > value){  //last value has to be tested to get last child
+            } else if (index == currentNode.values.size()-1){  //last value has to be tested to get last child
                 return currentNode.children.get(index + 1);
             }
         }
