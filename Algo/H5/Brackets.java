@@ -22,24 +22,23 @@ public class Brackets {
 
             if (c == '(' || c == '{' || c == '['){     //add open bracket to Stack
                 bracketStack.addLast(Character.toString(c));
-            } else if (c == ')'){
+            } else if (c == ')'|| c == '}' || c == ']'){
                 String openBracket = bracketStack.removeLast();
-                if (openBracket == null || !openBracket.equals("(")){   //bracket was not opened, or different bracket kind was opened
-                    return false;
-                }
-            } else if (c == '}'){
-                String openBracket = bracketStack.removeLast();
-                if (openBracket == null || !openBracket.equals("{")){
-                    return false;
-                }
-            } else if (c == ']'){
-                String openBracket = bracketStack.removeLast();
-                if (openBracket == null || !openBracket.equals("[")){
+                if (openBracket == null || !openBracket.equals(getOppositeBracket(c))){   //bracket was not opened, or different bracket kind was opened
                     return false;
                 }
             }
         }
         return bracketStack.removeLast() == null;   //bracketStack is empty
+    }
+    
+    /**
+     * @param bracket bracket to get the closed one to
+     * @return the corresponding closed bracket
+     */
+    private String getOppositeBracket(char bracket){
+        int increment = bracket==')'? 1: 2;
+        return String.valueOf((char)(bracket - increment));
     }
 
     /**
