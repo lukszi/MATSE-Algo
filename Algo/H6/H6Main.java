@@ -1,10 +1,17 @@
 import java.util.Arrays;
 
+/**
+ * @author Lukas Szimtenings
+ * @author Felix Szimtenings
+ * @author Cedric Radtke
+ */
 public class H6Main
 {
     public static void main(String[] args)
     {
         Integer[] values = {1, 6, 8, 18, 23, 5, 17, 20, 26, 21, 9};
+
+        // Add elements
         Heap heap = new Heap();
         Arrays.stream(values).forEach(value -> {
             System.out.println(heap);
@@ -12,7 +19,8 @@ public class H6Main
         });
         System.out.println(heap);
 
-        while(!heap.isEmpty()){
+        // Remove elements
+        while (!heap.isEmpty()) {
             System.out.println(heap.getMax());
             System.out.println(heap);
         }
