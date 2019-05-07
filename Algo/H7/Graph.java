@@ -32,7 +32,6 @@ public class Graph
      */
     public Graph(int[] list){
         this(list[0]);
-        edgeCount = list[1];
         for(int i = 2; i< list.length; i+=2){
             addEdge(list[i], list[i+1]);
         }
@@ -50,9 +49,9 @@ public class Graph
                 if(line.trim().length()==0)
                     continue;
                 adjacencies.add(Integer.parseInt(entry));
+                this.edgeCount++;
             }
             adjacencyList.add(adjacencies);
-            this.edgeCount++;
         });
         ArrayList<Integer>[] ret = new ArrayList[0];
         ret = adjacencyList.toArray(ret);
