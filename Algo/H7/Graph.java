@@ -97,6 +97,8 @@ public class Graph
      */
     @SuppressWarnings("unchecked")
     public ArrayList<Integer> getAdjacent(int v){
+        if(v<1)
+            throw new IndexOutOfBoundsException();
         return (ArrayList<Integer>) adjacencyList[v].clone();
     }
 
