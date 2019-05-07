@@ -1,3 +1,8 @@
+/**
+ * @author Lukas Szimtenings
+ * @author Felix Szimtenings
+ * @author Cedric Radtke
+ */
 public class H7Main
 {
     public static void main(String[] args)
