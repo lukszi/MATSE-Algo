@@ -11,7 +11,7 @@ public class Dijkstra
 
     private static void dijkstra(Node[] graph)
     {
-        // initialize all elemets
+        // initialize distances with infinity and 0 to the starting element
         Integer[] distances = new Integer[graph.length];
         for(int i = 0; i<distances.length; i++){
             distances[i] = Integer.MAX_VALUE;
@@ -26,6 +26,7 @@ public class Dijkstra
             Node closest = findClosest(distances, new ArrayList<>(unvisited));
             unvisited.remove(closest);
 
+            // Go through all neighbours that haven't been visited yet, and update their distances
             for(Node neighbour : closest.distances.keySet()){
                 if(unvisited.contains(neighbour)){
                     updateDistance(closest, neighbour, distances, predecessors);
@@ -38,21 +39,24 @@ public class Dijkstra
 
     private static void updateDistance(Node source, Node neighbour, Integer[] distances, Node[] predecessors)
     {
+        // Calculate distance using a detour through source
         int distDetour = source.distances.get(neighbour) + distances[source.name];
 
+        // If the detour is shorter than the original path, update distances and predecessors
         if(distDetour < distances[neighbour.name]){
             distances[neighbour.name] = distDetour;
             predecessors[neighbour.name] = source;
         }
     }
 
-    //TODO: Implemementieren lol
     private static Node findClosest(Integer[] distance, List<Node> unvisited)
     {
         Node closest = unvisited.get(1);
-        for(Node candidate : unvisited){
-            if(candidate == null)
-                continue;
+
+        // Iterate over all remaining nodes to find the closest one
+        for(int i = 2; i< unvisited.size(); i++){
+            Node candidate = unvisited.get(i);
+            // Check if node is closer to the starting node than the current closest one
             if(distance[candidate.name]< distance[closest.name])
                 closest = candidate;
         }
