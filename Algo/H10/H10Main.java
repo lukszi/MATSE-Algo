@@ -1,5 +1,13 @@
+/**
+ * @author Lukas Szimtenings
+ * @author Felix Szimtenings
+ * @author Cedric Radtke
+ */
 public class H10Main
 {
+    /**
+     * Testet den Dijkstra-Algorithmus
+     */
     public static void main(String[] args)
     {
         int[] testCase1 = {4,1,2,2,1,4,5,2,4,1,2,3,4,3,1,1,4,3,1};

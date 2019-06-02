@@ -1,7 +1,17 @@
 import java.util.*;
 
+/**
+ * @author Lukas Szimtenings
+ * @author Felix Szimtenings
+ * @author Cedric Radtke
+ */
 public class Dijkstra
 {
+    /**
+     * Fuehrt den Dijkstra-Algorithmus anhand der uebergebenen Kantenliste durch.
+     * Die Zwischenschritte werden auf dem Bildschirm ausgegeben.
+     * @param edges die Kantenliste des Graphen
+     */
     public static void printDijkstra(int[] edges){
         Node[] graph = parseEdges(edges);
         printHeader(edges[0]);
