@@ -41,8 +41,8 @@ public class Gewichte {
         if (weights.length == currentIndex){    //alle Gewichte wurden platziert
             return;
         }
-        //Gewicht links platzieren
         int currentWeight = weights[currentIndex];
+        //Gewicht links platzieren
         path.add(currentWeight);
         weigh(desiredWeight, path, currentSum + currentWeight, weights, currentIndex + 1);
         path.remove(path.size() - 1);
